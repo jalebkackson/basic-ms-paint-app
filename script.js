@@ -70,3 +70,6 @@ clearBtn.addEventListener("click", (e)=>{
     })
 })
 
+colorSelector.addEventListener("change", (e)=> {
+    currentColor = colorSelector.value;
+})
