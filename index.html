@@ -4,20 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <title>Paint</title>
+    <title>Paint - Windows 95</title>
 </head>
 <body>
     <h1>Draw a Picture</h1>
+    <h2>This design was generated using Cursor AI</h2>
     <div class="content">
-        <div class="userOptions">
-            <input type="color" class="color-selector">
-            <button class="eraser">Eraser</button>
-            <button class="clear">Clear</button>
-            <label for="Resolution" class="resolutionLabel"></label>
-            <input type="range" name="volume" min="0" max="200" value="60" class="slider">
-
+        <div class="window">
+            <div class="window-title">Toolbox</div>
+            <div class="window-content">
+                <div class="userOptions">
+                    <div style="display: flex; flex-direction: column; align-items: center; gap: 4px;">
+                        <label style="font-size: 11px; color: var(--win-darker);">Color:</label>
+                        <input type="color" class="color-selector">
+                    </div>
+                    <button class="eraser">Eraser</button>
+                    <button class="clear">Clear</button>
+                    <div class="slider-container">
+                        <label for="Resolution" class="resolutionLabel"></label>
+                        <input type="range" name="volume" min="0" max="200" value="60" class="slider">
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="container"></div>
+        <div class="window">
+            <div class="window-title">Canvas</div>
+            <div class="window-content">
+                <div class="container"></div>
+            </div>
+        </div>
     </div>
     
     <script src="script.js"></script>

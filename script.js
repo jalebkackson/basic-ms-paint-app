@@ -20,6 +20,11 @@ document.addEventListener("mouseup", (e)=>{
 // toggles the eraser
 eraserBtn.addEventListener("click", (e)=>{
     isEraserActive = !isEraserActive;
+    if (isEraserActive) {
+        eraserBtn.classList.add('pressed');
+    } else {
+        eraserBtn.classList.remove('pressed');
+    }
 })
 
 // gets slider value and applies it to resolution

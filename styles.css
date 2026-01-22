@@ -1,23 +1,211 @@
+/* Windows 95 Color Palette */
+:root {
+    --win-gray: #C0C0C0;
+    --win-light: #FFFFFF;
+    --win-dark: #808080;
+    --win-darker: #000000;
+    --win-blue: #000080;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 20px;
+    background: #008080 url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><rect fill="%23008080" width="100" height="100"/></svg>');
+    font-family: 'MS Sans Serif', 'MS UI Gothic', Arial, sans-serif;
+    font-size: 11px;
+    min-height: 100vh;
+}
+
+h1 {
+    font-family: 'MS Sans Serif', 'MS UI Gothic', Arial, sans-serif;
+    font-size: 25px;
+    font-weight: bold;
+    color: var(--win-darker);
+    text-align: center;
+    margin: 20px 0;
+    text-shadow: 1px 1px 0 var(--win-light);
+}
+
+h2 {
+    text-align-last: center;
+
+}
+
 .content {
     display: flex;
     justify-content: center;
-    gap: 40px;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+/* Windows 95 Window Style */
+.window {
+    background: var(--win-gray);
+    border: 2px outset var(--win-gray);
+    padding: 2px;
+    box-shadow: 
+        inset -1px -1px 0 var(--win-dark),
+        inset 1px 1px 0 var(--win-light);
+}
+
+.window-title {
+    background: linear-gradient(to right, var(--win-blue), #0000FF);
+    color: var(--win-light);
+    padding: 2px 4px;
+    font-weight: bold;
+    font-size: 11px;
+    margin-bottom: 2px;
+    border: 1px solid var(--win-darker);
+}
+
+.window-content {
+    background: var(--win-gray);
+    padding: 8px;
 }
 
 .userOptions {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 30px;
-    /* margin-right:  */
+    gap: 12px;
+    min-width: 200px;
 }
 
+/* Windows 95 Button Style */
+button {
+    font-family: 'MS Sans Serif', 'MS UI Gothic', Arial, sans-serif;
+    font-size: 11px;
+    background: var(--win-gray);
+    border: 2px outset var(--win-gray);
+    padding: 4px 12px;
+    cursor: pointer;
+    min-width: 75px;
+    box-shadow: 
+        inset -1px -1px 0 var(--win-dark),
+        inset 1px 1px 0 var(--win-light);
+}
+
+button:hover {
+    background: #D4D0C8;
+}
+
+button:active {
+    border: 2px inset var(--win-gray);
+    box-shadow: 
+        inset 1px 1px 0 var(--win-dark),
+        inset -1px -1px 0 var(--win-light);
+    padding: 5px 11px 3px 13px;
+}
+
+button:focus {
+    outline: 1px dotted var(--win-darker);
+    outline-offset: -3px;
+}
+
+button.pressed {
+    border: 2px inset var(--win-gray);
+    box-shadow: 
+        inset 1px 1px 0 var(--win-dark),
+        inset -1px -1px 0 var(--win-light);
+    padding: 5px 11px 3px 13px;
+}
+
+/* Windows 95 Color Input Style */
+.color-selector {
+    width: 60px;
+    height: 25px;
+    border: 2px inset var(--win-gray);
+    cursor: pointer;
+    box-shadow: 
+        inset 1px 1px 0 var(--win-dark),
+        inset -1px -1px 0 var(--win-light);
+}
+
+.color-selector::-webkit-color-swatch-wrapper {
+    padding: 0;
+}
+
+.color-selector::-webkit-color-swatch {
+    border: none;
+}
+
+/* Windows 95 Slider Style */
+.slider-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    width: 100%;
+}
+
+.resolutionLabel {
+    font-family: 'MS Sans Serif', 'MS UI Gothic', Arial, sans-serif;
+    font-size: 11px;
+    color: var(--win-darker);
+}
+
+.slider {
+    width: 100%;
+    height: 20px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: var(--win-gray);
+    border: 2px inset var(--win-gray);
+    box-shadow: 
+        inset 1px 1px 0 var(--win-dark),
+        inset -1px -1px 0 var(--win-light);
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 12px;
+    height: 20px;
+    background: var(--win-gray);
+    border: 1px solid var(--win-dark);
+    border-right: 1px solid var(--win-light);
+    border-bottom: 1px solid var(--win-light);
+    cursor: pointer;
+    box-shadow: 
+        1px 0 0 var(--win-dark),
+        0 1px 0 var(--win-dark);
+}
+
+.slider::-webkit-slider-thumb:active {
+    border: 1px inset var(--win-gray);
+    box-shadow: 
+        inset 1px 1px 0 var(--win-dark);
+}
+
+.slider::-moz-range-thumb {
+    width: 12px;
+    height: 20px;
+    background: var(--win-gray);
+    border: 1px solid var(--win-dark);
+    border-right: 1px solid var(--win-light);
+    border-bottom: 1px solid var(--win-light);
+    cursor: pointer;
+    box-shadow: 
+        1px 0 0 var(--win-dark),
+        0 1px 0 var(--win-dark);
+}
+
+/* Windows 95 Container/Canvas Style */
 .container {
     display: flex;
     flex-direction: column;
     width: 700px;
     height: 700px;
-    border: 1px solid purple;
+    background: var(--win-light);
+    border: 2px inset var(--win-gray);
+    box-shadow: 
+        inset 1px 1px 0 var(--win-dark),
+        inset -1px -1px 0 var(--win-light);
+    padding: 2px;
 }
 
 .row {
@@ -29,4 +217,6 @@
 .cell {
     width: 100%;
     height: 100%;
+    background: var(--win-light);
+    border: none;
 }
