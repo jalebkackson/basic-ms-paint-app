@@ -8,8 +8,8 @@ let resolution = slider.value;
 let isMouseDown = false;
 let isEraserActive = false;
 let currentColor = "black";
-
 sliderLabel.innerText = "Resolution: " + resolution
+
 document.addEventListener("mousedown", (e)=>{
     isMouseDown = true;
 })
@@ -23,9 +23,9 @@ eraserBtn.addEventListener("click", (e)=>{
 })
 
 // gets slider value and applies it to resolution
-slider.addEventListener("change", (e)=>{
+slider.addEventListener("input", (e)=>{
     resolution = slider.value
-    sliderLabel.innerText = "Resolution " + resolution;
+    sliderLabel.innerText = "Resolution: " + resolution + " x " + resolution;
     generateCells();
 })
 
