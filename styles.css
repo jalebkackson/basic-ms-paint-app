@@ -20,6 +20,12 @@ body {
     min-height: 100vh;
 }
 
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+}
+
 h1 {
     font-family: 'MS Sans Serif', 'MS UI Gothic', Arial, sans-serif;
     font-size: 25px;
@@ -31,8 +37,22 @@ h1 {
 }
 
 h2 {
-    text-align-last: center;
+    text-align: center;
+    font-size: 12px;
+    color: var(--win-darker);
+    margin: 0 0 20px 0;
+}
 
+@media (max-width: 768px) {
+    h1 {
+        font-size: 20px;
+        margin: 10px 0;
+    }
+    
+    h2 {
+        font-size: 11px;
+        margin: 0 0 15px 0;
+    }
 }
 
 .content {
@@ -40,6 +60,15 @@ h2 {
     justify-content: center;
     gap: 20px;
     align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
 }
 
 /* Windows 95 Window Style */
@@ -50,6 +79,14 @@ h2 {
     box-shadow: 
         inset -1px -1px 0 var(--win-dark),
         inset 1px 1px 0 var(--win-light);
+    flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+    .window {
+        width: 100%;
+        max-width: calc(100vw - 40px);
+    }
 }
 
 .window-title {
@@ -75,6 +112,14 @@ h2 {
     min-width: 200px;
 }
 
+@media (max-width: 768px) {
+    .userOptions {
+        min-width: auto;
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
 /* Windows 95 Button Style */
 button {
     font-family: 'MS Sans Serif', 'MS UI Gothic', Arial, sans-serif;
@@ -84,9 +129,17 @@ button {
     padding: 4px 12px;
     cursor: pointer;
     min-width: 75px;
+    width: 100%;
+    max-width: 150px;
     box-shadow: 
         inset -1px -1px 0 var(--win-dark),
         inset 1px 1px 0 var(--win-light);
+}
+
+@media (max-width: 768px) {
+    button {
+        max-width: 200px;
+    }
 }
 
 button:hover {
@@ -200,12 +253,29 @@ button.pressed {
     flex-direction: column;
     width: 700px;
     height: 700px;
+    max-width: 100%;
     background: var(--win-light);
     border: 2px inset var(--win-gray);
     box-shadow: 
         inset 1px 1px 0 var(--win-dark),
         inset -1px -1px 0 var(--win-light);
     padding: 2px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+        max-width: calc(100vw - 60px);
+        height: calc(100vw - 60px);
+        max-height: 500px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .container {
+        width: min(600px, calc(100vw - 300px));
+        height: min(600px, calc(100vw - 300px));
+    }
 }
 
 .row {
